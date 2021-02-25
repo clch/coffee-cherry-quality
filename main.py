@@ -18,6 +18,7 @@ for image_path in image_paths:
 	label = image_path.split(os.path.sep)[-2]
 	
 	image = cv2.imread(image_path)
+	# HSV?
 	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 	image = cv2.resize(image, (128, 128))
 
@@ -43,6 +44,3 @@ datagen = tf.keras.preprocessing.image.ImageDataGenerator(
 	horizontal_flip=True)
 
 datagen.fit(x_train)
-
-# train_generator = train_datagen.flow_from_directory(
-# 	TRAIN_PATH)
